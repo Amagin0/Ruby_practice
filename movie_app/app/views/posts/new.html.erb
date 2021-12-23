@@ -1,0 +1,13 @@
+<%= form_with model: @post, local: true do |f| %>
+
+  <div class="form-group">
+    <%= f.text_field :title, placeholder: "タイトル" %>
+    </div>
+  <div class="form-group">
+    <%= f.text_area :body, placeholder: "動画の説明" %>
+  </div>
+  <div class="form-group">
+    <%= f.file_field :video %>
+  </div>
+    <%= f.submit class: "btn btn-primary" %>
+<% end %>
