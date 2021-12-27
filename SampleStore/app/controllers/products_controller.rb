@@ -4,11 +4,10 @@ class ProductsController < ApplicationController
   def index
 
     if params[:products].present?
-        @products = Product.search(params[:products])
+      @products = Product.search(params[:products])
     else
       @products = Product.all
     end
-
     @categories = Category.all
   end
 
@@ -62,6 +61,6 @@ class ProductsController < ApplicationController
     end
 
     def product_params
-      params.require(:product).permit(:number, :unit_price, :image, :description, :category_id)
+      params.require(:product).permit(:number, :name, :unit_price, :image, :description, :category_id)
     end
 end

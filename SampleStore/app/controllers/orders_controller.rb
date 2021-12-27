@@ -34,8 +34,11 @@ class OrdersController < ApplicationController
   def index
   end
 
+
+  private
+
   def order_params
-    params.require(:order).permit(:number, :occured_at, :payment, :payment_stat,
+    params.require(:order).permit(:number, :occured_at, :payment, :payment_stat, 
       order_details_attributes: [:id, :discount_rate, :quantity, :order_id, :product_id])
   end
 

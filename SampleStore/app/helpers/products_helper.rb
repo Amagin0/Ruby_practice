@@ -1,6 +1,6 @@
 module ProductsHelper
 
-  def search_pass(category=nil)
+  def search_path(category=nil)
     if action_name == "cart"
       cart_orders_path(category)
     else

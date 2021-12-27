@@ -1,10 +1,10 @@
 class Order < ApplicationRecord
-  after_initialize :order_info_set
 
   belongs_to :user
-  has_many :order_detail
+  has_many :order_details
+  accepts_nested_attributes_for :order_details
 
-  accepts_nested_attributes_for :order_detail
+  after_initialize :order_info_set
 
   enum payment: {cash_on_delivery: 0, bank_transfer: 1, credit_payment: 2}
 
@@ -14,9 +14,9 @@ class Order < ApplicationRecord
   private
   def order_info_set
     # 注文番号採番ルール
-    self.number = "0Dnt#{Time.now.year}#{Time.now.month}#{Time.now.day}00001"
+    self.number = "ODnt#{Time.now.year}#{Time.now.month}#{Time.now.day}00001"
     # 注文日セット
-    self.occured_at = Date,today
+    self.occured_at = Date.today
   end
 
   def payment_stat_check

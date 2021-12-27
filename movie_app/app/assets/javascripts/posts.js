@@ -23,7 +23,6 @@ $(function() {
       animation.hide();
       }
     });
-
     //リスト表示
     // home.html.erbのulタグ（id="list"が指定されているので#list）にcommentを記述する
     $('<li id="list_item" class="list-group-item list-group-item-light" color:black">' + comment + '</li>').prependTo('#list');

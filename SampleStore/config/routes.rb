@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :recognitions, only: [:new, :create, :destroy]
+  resource :recognitions, only: [:new, :create, :destroy]
   resources :customers
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy] do
@@ -8,5 +8,4 @@ Rails.application.routes.draw do
     put :new, on: :collection
   end
 
-  root "products#index"
 end

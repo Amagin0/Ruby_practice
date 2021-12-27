@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
   def authentication_check
     unless current_user.present?
-      redirect_to new_recognition_path
+      redirect_to new_recognitions_path
     end
   end
 

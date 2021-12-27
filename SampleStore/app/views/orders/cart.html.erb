@@ -1,16 +1,16 @@
 <h1><%= t("title.choose_products") %></h1>
 
-<%= form_with(scope: nil, local: true ,url: orders_path, method: :put) do |f| %>
+<%= form_with(scope: nil, local: true, url: orders_path, method: :put) do |f| %>
   <table>
     <thead>
       <tr>
         <th><%= t("column.product_number") %></th>
-        <th><%= t("column.product_name") %<</th>
-        <th><%= t("column.unit_price") %<</th>
-        <th><%= t("column.image") %<</th>
-        <th><%= t("column.description") %<</th>
-        <th><%= t("column.check") %<</th>
-        <th><%= t("column.quantity") %<</th>
+        <th><%= t("column.product_name") %></th>
+        <th><%= t("column.unit_price") %></th>
+        <th><%= t("column.image") %></th>
+        <th><%= t("column.description") %></th>
+        <th><%= t("column.check") %></th>
+        <th><%= t("column.quantity") %></th>
       </tr>
     </thead>
     <tbody>
@@ -24,7 +24,7 @@
           <% else %>
             <td><%= image_tag "default_product.png" %></td>
           <% end %>
-          <td><%= product.decription %></td>
+          <td><%= product.description %></td>
           <td><%= check_box_tag "orders[#{idx}][product]", product.id %></td>
           <td><%= number_field_tag "orders[#{idx}][quantity]", 1, class: "small_field" %></td>
         </tr>
